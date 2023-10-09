@@ -1,4 +1,5 @@
 # Create env variable
+
 ```
 DB_NAME = training
 DB_HOST = ipaddress
