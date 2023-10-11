@@ -12,6 +12,10 @@ services:
   db:
     image: "mariadb"
     restart: always
+    links:
+      - phpmyadmin
+    ports:
+      - "3306"
     envrionment:
       - MYSQL_ROOT_PASSWORD: password
       - MYSQL_DATABASE: training
@@ -26,6 +30,8 @@ services:
     restart: always
     ports:
       - "8000"
+    environment:
+      - PMA_HOST: db
 
 volumes:
   app-data:
