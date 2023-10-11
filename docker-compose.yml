@@ -17,11 +17,11 @@ services:
       - phpmyadmin
     ports:
       - "3306"
-    envrionment:
-      - MYSQL_ROOT_PASSWORD:password
-      - MYSQL_DATABASE:training
-      - MYSQL_USER:peserta
-      - MYSQL_PASSWORD:password
+    environment:
+      - MYSQL_ROOT_PASSWORD: password
+      - MYSQL_DATABASE: training
+      - MYSQL_USER: peserta
+      - MYSQL_PASSWORD: password
     volumes:
       - ./apps/database/:/docker-entrypoint-initdb.d/
       - db-data:/var/lib/mysql
