@@ -8,13 +8,14 @@ services:
       - "3000:3000"
     volumes:
       - app-data:/app/public/images
+
   db:
     image: "mariadb"
     restart: always
     links:
       - phpmyadmin
     ports:
-      - "3306"
+      - "3306:3306"
     envrionment:
       - MYSQL_ROOT_PASSWORD: password
       - MYSQL_DATABASE: training
@@ -23,6 +24,7 @@ services:
     volumes:
       - ./apps/database/:/docker-entrypoint-initdb.d/
       - db-data:/var/lib/mysql
+
   phpmyadmin:
     image: "phpmyadmin"
     restart: always
