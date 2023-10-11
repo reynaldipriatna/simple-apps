@@ -3,7 +3,8 @@ services:
   backend:
     build: apps/.
     restart: always
-    links: -db
+    links:
+      - db
     ports:
       - "3000:3000"
     volumes:
