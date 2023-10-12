@@ -25,6 +25,10 @@ app.get("/idn", (req, res) => {
   res.send("Hello IDN!!!");
 });
 
+app.get("/hello", (req, res) => {
+  res.send("Hello World!!!");
+});
+
 app.get("/users", (req, res, next) => {
   const sql = "SELECT * FROM tb_data ORDER BY id desc";
   connection.query(sql, (error, fields) => {
